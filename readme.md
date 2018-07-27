@@ -1,5 +1,5 @@
 # canvas-gauge-card
-This card allows you to use the awesome gauges at https://canvas-gauges.com/ in your lovelace GUI. This is still a very early and untested alpha version. Tested only on chrome and safari browsers. 
+This card allows you to use the awesome gauges at https://canvas-gauges.com/ in your lovelace GUI. This is still a very early and untested **alpha version**. Tested only on chrome and safari browsers. 
 
 If you want to support the developer, please support the lib devs of the canvas-gauges.
 
@@ -116,7 +116,7 @@ Some of the properties that could be set. *italic* is not mandatory.
 | type | `"radial-gauge"` or `"linear-gauge"`
 | width | width of the gauge
 | height | height of the gauge
-| *card_height*| the actual height of the card, set to smaller value than gauge height if using a half guage. Not use if using a full circle gauge.
+| *card_height*| the actual height of the card, set to smaller value than gauge height if using a half guage. Set to same height as height gauge property if using a full circle gauge.
 | *font_size* | size of name, leave out it will be dynamic
 | *shadow_height* | xx% of total height is shadow height
 
