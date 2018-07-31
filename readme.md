@@ -1,5 +1,5 @@
 # canvas-gauge-card
-This card allows you to use the awesome gauges at https://canvas-gauges.com/ in your lovelace GUI. This is still a very early and untested **alpha version**. Tested only on chrome and safari browsers. 
+This card allows you to use the awesome gauges at https://canvas-gauges.com/ in your lovelace GUI. This is still a very early and untested alpha version. Tested only on chrome and safari browsers. 
 
 If you want to support the developer, please support the lib devs of the canvas-gauges.
 
@@ -106,6 +106,78 @@ Use the javascript names of properties from the examples at https://canvas-gauge
    
 ```
 
+### Example 4, 4 gauges in a row in a horizontal-stack
+<img src="docs/screen_sample4.png"  width="505" height="95"/>
+This example shows gauges with or without text. This text are placed below the actual gauge this time.
+
+**No text version**
+```yaml
+...
+- type: horizontal-stack
+  cards:
+    - type: custom:canvas-gauge-card
+      entity: sensor.load_1m
+      card_height: 62
+      gauge:
+        type: "radial-gauge"
+        width: 110
+        height: 110
+        minValue: 0
+        maxValue: 100
+        startAngle: 90
+        ticksAngle: 180
+        valueBox: false
+        majorTicks: ["0", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"]
+        minorTicks: 2
+        strokeTicks: true
+        highlights: [{"from": 80, "to": 100, "color": "rgba(200, 50, 50, .75)" }]
+        colorPlate: "#ddd"
+        borders: false
+        needleType: "arrow"
+        needleWidth: 2
+        needleCircleSize: 7
+        needleCircleOuter: true
+        needleCircleInner: false
+        animationDuration: 1500
+        animationRule: "linear"
+```
+**With text version**
+```yaml
+...
+- type: horizontal-stack
+  cards:
+    - type: custom:canvas-gauge-card
+      entity: sensor.processor_use
+      card_height: 62
+      name: 'Processor use'
+      shadow_height: "25%"
+      font_size: 0.9em
+      shadow_bottom: "20"
+      gauge:
+        type: "radial-gauge"
+        width: 110
+        height: 110
+        minValue: 0
+        maxValue: 100
+        startAngle: 90
+        ticksAngle: 180
+        valueBox: false
+        majorTicks: ["0", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"]
+        minorTicks: 2
+        strokeTicks: true
+        highlights: [{"from": 80, "to": 100, "color": "rgba(200, 50, 50, .75)" }]
+        colorPlate: "#ddd"
+        borders: false
+        needleType: "arrow"
+        needleWidth: 2
+        needleCircleSize: 7
+        needleCircleOuter: true
+        needleCircleInner: false
+        animationDuration: 1500
+        animationRule: "linear"
+
+```
+
 ### Properties
 Some of the properties that could be set. *italic* is not mandatory.
 
@@ -116,9 +188,10 @@ Some of the properties that could be set. *italic* is not mandatory.
 | type | `"radial-gauge"` or `"linear-gauge"`
 | width | width of the gauge
 | height | height of the gauge
-| *card_height*| the actual height of the card, set to smaller value than gauge height if using a half guage. Set to same height as height gauge property if using a full circle gauge.
+| *card_height*| the actual height of the card, set to smaller value than gauge height if using a half guage. Not use if using a full circle gauge.
 | *font_size* | size of name, leave out it will be dynamic
 | *shadow_height* | xx% of total height is shadow height
+| *shadow_bottom* | how far below the gauge in pixels the shadow should apear 
 
 For a complete documentation of available properties, please see https://canvas-gauges.com/documentation/user-guide/configuration
 
