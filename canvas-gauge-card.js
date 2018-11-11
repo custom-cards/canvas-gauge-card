@@ -66,6 +66,7 @@ class CanvasGaugeCard extends HTMLElement {
                     width: ${elemContainer.width}px;
                     height: calc(${elemContainer.height}px + ${this.config.shadow_bottom ? this.config.shadow_bottom : 0}px);
                     position: relative;
+                    margin: auto;
                 }
                 #container {
                     width: ${elemContainer.width}px;
