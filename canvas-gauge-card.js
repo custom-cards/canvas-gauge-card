@@ -62,6 +62,13 @@ class CanvasGaugeCard extends HTMLElement {
         // The styles
         const style = `
             <style>
+                :host {
+                    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+                    display: block !important;
+                    border-radius: 2px !important;
+                    transition: all 0.30s ease-out !important;
+                    background-color: white !important;
+                }
                 #cardroot {
                     width: ${elemContainer.width}px;
                     height: calc(${elemContainer.height}px + ${this.config.shadow_bottom ? this.config.shadow_bottom : 0}px);
