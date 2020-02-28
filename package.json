@@ -36,7 +36,7 @@
     "rollup-plugin-uglify": "^6.0.3"
   },
   "scripts": {
-    "build": "rollup ./src/canvas-gauge-card.js -o ./dist/canvas-gauge-card.js",
+    "build": "rollup -c",
     "start": "rollup -c --watch"
   }
 }
