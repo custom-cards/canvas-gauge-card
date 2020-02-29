@@ -1,5 +1,7 @@
 # canvas-gauge-card
 
+![Build](https://github.com/custom-cards/canvas-gauge-card/workflows/Build/badge.svg)
+
 This card allows you to use the awesome gauges at https://canvas-gauges.com/ in your lovelace GUI. This is still a very early and untested alpha version. Tested only on chrome and safari browsers.
 
 If you want to support the developer, please support the lib devs of the canvas-gauges.
@@ -13,7 +15,9 @@ Here is a some different screens from my own setup. But the possibilites to make
 
 ## Usage
 
-Download the files `canvas-gauge-card.js` and `gauge.min.js` to your home assistant config from the `dist` folder. Add a module link to the `canvas-gauge-card.js` file. The link needs to be the same as where you put it.
+Download through HACS (recommended) or ...
+
+Download the file `canvas-gauge-card.js` from the [**latest release**](https://github.com/custom-cards/canvas-gauge-card/releases/latest) to your home assistant config. Add a module link to the `canvas-gauge-card.js` file. The link needs to be the same as where you put it.
 Example:
 
 ```yaml

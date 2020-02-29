@@ -4,8 +4,13 @@ This version fixes problems with version 106.x of Home Assistant. If you have pr
 
 ```yaml
 gauge:
-    borderShadowWidth: 0
-    borderOuterWidth: 0
-    borderMiddleWidth: 0
-    borderInnerWidth: 0
+  borderShadowWidth: 0
+  borderOuterWidth: 0
+  borderMiddleWidth: 0
+  borderInnerWidth: 0
 ```
+
+# 0.0.5
+
+- Support to set `background_color`, see readme.md.
+- Build system, now builds to one file
