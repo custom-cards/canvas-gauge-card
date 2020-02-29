@@ -10,7 +10,7 @@ Here is a some different screens from my own setup. But the possibilites to make
 <a href="docs/screen_2.png" target="_blank"><img src="docs/screen_2.png"  width="250" height="244"/></a>
 
 ## Usage
-Download the files `canvas-gauge-card.js` and `gauge.min.js` to your home assistant config. Add a module link to the `canvas-gauge-card.js` file. The link needs to be the same as where you put it.
+Download the files `canvas-gauge-card.js` and `gauge.min.js` to your home assistant config from the `dist` folder. Add a module link to the `canvas-gauge-card.js` file. The link needs to be the same as where you put it.
 Example:
 ```yaml
 resources:
