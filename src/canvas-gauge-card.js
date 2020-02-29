@@ -132,11 +132,6 @@ class CanvasGaugeCard extends HTMLElement {
     elemCanvas.width = this.config.gauge["width"];
     elemCanvas.height = this.config.gauge["height"];
 
-    // Have to do this cause some bug in library gauge.min.js dont display the gauge
-    // keep this code for a while incase I need to activate it again...
-    //var ctx = elemCanvas.getContext('2d');
-    //ctx.fillStyle = 'black';
-    //ctx.fillRect(0, 0, elemCanvas.width, elemCanvas.height);
     var gauge;
     if (this.config.gauge.type == "linear-gauge") {
       gauge = new Gauge.LinearGauge({
@@ -242,14 +237,6 @@ class CanvasGaugeCard extends HTMLElement {
     }
     this.config = config;
 
-    // Remove, fails from v0.106
-    // Fix initbug from the canvas lib that shows borders even if set to false
-    // if (typeof config.gauge.borders != typeof undefined && config.gauge.borders === false) {
-    //     config.gauge['borderShadowWidth'] = 0;
-    //     config.gauge['borderOuterWidth'] = 0;
-    //     config.gauge['borderMiddleWidth'] = 0;
-    //     config.gauge['borderInnerWidth'] = 0;
-    // }
     this._render();
   }
 
