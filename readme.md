@@ -1,9 +1,9 @@
 # canvas-gauge-card
-This card allows you to use the awesome gauges at https://canvas-gauges.com/ in your lovelace GUI. This is still a very early and untested alpha version. Tested only on chrome and safari browsers. 
+This card allows you to use the awesome gauges at https://canvas-gauges.com/ in your lovelace GUI. This is still a very early and untested alpha version. Tested only on chrome and safari browsers.
 
 If you want to support the developer, please support the lib devs of the canvas-gauges.
 
-## Screens 
+## Screens
 Here is a some different screens from my own setup. But the possibilites to make your own look and feel are great.
 
 <a href="docs/screen_1.png" target="_blank"><img src="docs/screen_1.png"  width="254" height="204"/></a>
@@ -21,7 +21,7 @@ Configure the card properties.
 
 Skip `name`property if you dont want the name with the shadow area to show.
 
-Use the javascript names of properties from the examples at https://canvas-gauges.com/documentation/examples/. Click on an example that you like, check the JS version and copy the properties to the lovelace yaml file. Just remove the ',' after copy from site. 
+Use the javascript names of properties from the examples at https://canvas-gauges.com/documentation/examples/. Click on an example that you like, check the JS version and copy the properties to the lovelace yaml file. Just remove the ',' after copy from site.
 
 ### Example 1, simple half gauge
 <img src="docs/screen_sample2.png"  width="230" height="130"/>
@@ -38,6 +38,10 @@ Use the javascript names of properties from the examples at https://canvas-gauge
         title: Processor (%)
         width: 220
         height: 220
+        borderShadowWidth: 0
+        borderOuterWidth: 0
+        borderMiddleWidth: 0
+        borderInnerWidth: 0
         minValue: 0
         maxValue: 100
         startAngle: 30
@@ -65,6 +69,10 @@ Use the javascript names of properties from the examples at https://canvas-gauge
         type: "radial-gauge"
         width: 220
         height: 220
+        borderShadowWidth: 0
+        borderOuterWidth: 0
+        borderMiddleWidth: 0
+        borderInnerWidth: 0
         minValue: 0
         maxValue: 100
         startAngle: 90
@@ -74,7 +82,7 @@ Use the javascript names of properties from the examples at https://canvas-gauge
         minorTicks: 2
         strokeTicks: true
         highlights: [{"from": 80, "to": 100,"color": "rgba(200, 50, 50, .75)"}]
-        borders: false   
+        borders: false
 ```
 ### Example 3, simple full gauge with shadow text
 <img src="docs/screen_sample3.png"  width="234" height="221"/>
@@ -92,6 +100,10 @@ Use the javascript names of properties from the examples at https://canvas-gauge
         type: "radial-gauge"
         width: 220
         height: 220
+        borderShadowWidth: 0
+        borderOuterWidth: 0
+        borderMiddleWidth: 0
+        borderInnerWidth: 0
         minValue: 0
         maxValue: 100
         startAngle: 40
@@ -103,7 +115,7 @@ Use the javascript names of properties from the examples at https://canvas-gauge
         strokeTicks: true
         highlights: [{"from": 80, "to": 100,"color": "rgba(200, 50, 50, .75)"}]
         borders: false
-   
+
 ```
 
 ### Example 4, 4 gauges in a row in a horizontal-stack
@@ -120,6 +132,10 @@ This example shows gauges with or without text. This text are placed below the a
       card_height: 62
       gauge:
         type: "radial-gauge"
+        borderShadowWidth: 0
+        borderOuterWidth: 0
+        borderMiddleWidth: 0
+        borderInnerWidth: 0
         width: 110
         height: 110
         minValue: 0
@@ -157,6 +173,10 @@ This example shows gauges with or without text. This text are placed below the a
         type: "radial-gauge"
         width: 110
         height: 110
+        borderShadowWidth: 0
+        borderOuterWidth: 0
+        borderMiddleWidth: 0
+        borderInnerWidth: 0
         minValue: 0
         maxValue: 100
         startAngle: 90
@@ -181,21 +201,21 @@ This example shows gauges with or without text. This text are placed below the a
 ### Properties
 Some of the properties that could be set. *italic* is not mandatory.
 
-| Property |Description
-|:---------|-----------
-| entity | your sensor
-| name | shows the name in shadow remove to hide it
-| type | `"radial-gauge"` or `"linear-gauge"`
-| width | width of the gauge
-| height | height of the gauge
-| *card_height*| the actual height of the card, set to smaller value than gauge height if using a half guage. Not use if using a full circle gauge.
-| *font_size* | size of name, leave out it will be dynamic
-| *shadow_height* | xx% of total height is shadow height
-| *shadow_bottom* | how far below the gauge in pixels the shadow should apear 
+| Property        | Description                                                                                                                        |
+| :-------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| entity          | your sensor                                                                                                                        |
+| name            | shows the name in shadow remove to hide it                                                                                         |
+| type            | `"radial-gauge"` or `"linear-gauge"`                                                                                               |
+| width           | width of the gauge                                                                                                                 |
+| height          | height of the gauge                                                                                                                |
+| *card_height*   | the actual height of the card, set to smaller value than gauge height if using a half guage. Not use if using a full circle gauge. |
+| *font_size*     | size of name, leave out it will be dynamic                                                                                         |
+| *shadow_height* | xx% of total height is shadow height                                                                                               |
+| *shadow_bottom* | how far below the gauge in pixels the shadow should apear                                                                          |
 
 For a complete documentation of available properties, please see https://canvas-gauges.com/documentation/user-guide/configuration
 
-## Repos 
+## Repos
 - [helto4real, Original cards](https://github.com/helto4real/lovelace-custom-cards)
 - [helto4real, Tomas Hellströms, Hass config using the card](https://github.com/helto4real/hassio)
 
