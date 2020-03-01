@@ -1,0 +1,22 @@
+name: "Build"
+
+on:
+  push:
+    branches:
+      - master
+      - backgroud-color
+  pull_request:
+    branches:
+      - master
+      - backgroud-color
+
+jobs:
+  build:
+    name: Test build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build
+        run: |
+          npm install
+          npm run build

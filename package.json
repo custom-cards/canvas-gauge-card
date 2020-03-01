@@ -1,0 +1,42 @@
+{
+  "name": "canvas-gauge-card",
+  "version": "0.0.4",
+  "description": "Lovelace canvas-gauge-card",
+  "keywords": [
+    "home-assistant",
+    "homeassistant",
+    "hass",
+    "automation",
+    "lovelace",
+    "custom-cards",
+    "canvas-gauge"
+  ],
+  "module": "canvas-gauge-card.js",
+  "repository": "git@github.com:custom_cards/canvas-gauge-card.git",
+  "author": "@helto4real",
+  "license": "MIT",
+  "dependencies": {
+    "@types/canvas-gauges": "^2.1.2",
+    "canvas-gauges": "^2.1.5",
+    "lit-element": "^2.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-decorators": "^7.4.0",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-json": "^4.0.0",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "prettier": "^1.18.2",
+    "rollup": "^1.32.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-legacy": "^1.0.0",
+    "rollup-plugin-serve": "^1.0.1",
+    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-uglify": "^6.0.3"
+  },
+  "scripts": {
+    "build": "rollup ./src/canvas-gauge-card.js -o ./dist/canvas-gauge-card.js",
+    "start": "rollup -c --watch"
+  }
+}

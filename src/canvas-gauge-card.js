@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import "./gauge.min.js";
+import Gauge from "canvas-gauges";
 
 /**
  * `canvas-gauge-card`
@@ -73,7 +73,11 @@ class CanvasGaugeCard extends HTMLElement {
                     display: block !important;
                     border-radius: 2px !important;
                     transition: all 0.30s ease-out !important;
-                    background-color: transparent !important;
+                    background-color: ${
+                      this.config.background_color
+                        ? this.config.background_color
+                        : "transparent"
+                    } !important;
                 }
                 #cardroot {
                     width: ${elemContainer.width}px;
@@ -135,14 +139,14 @@ class CanvasGaugeCard extends HTMLElement {
     //ctx.fillRect(0, 0, elemCanvas.width, elemCanvas.height);
     var gauge;
     if (this.config.gauge.type == "linear-gauge") {
-      gauge = new LinearGauge({
+      gauge = new Gauge.LinearGauge({
         renderTo: elemCanvas,
         height: elemCanvas.height,
         width: elemCanvas.width,
         value: 0
       });
     } else if (this.config.gauge.type == "radial-gauge") {
-      gauge = new RadialGauge({
+      gauge = new Gauge.RadialGauge({
         renderTo: elemCanvas,
         height: elemCanvas.height,
         width: elemCanvas.width,
