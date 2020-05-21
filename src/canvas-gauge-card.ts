@@ -153,7 +153,8 @@ export class CanvasGaugeCard extends LitElement {
       return html``;
     }
 
-    // TODO Check for stateObj or other necessary things and render a warning if missing
+    // Check for stateObj or other necessary things and render a warning if missing
+    // if provided in the future, this is a good spot doing just that :)
     if (this._config.show_warning) {
       return html`
         <ha-card>

@@ -1,6 +1,5 @@
 import { ActionConfig } from "custom-card-helpers";
 
-// TODO Add your configuration elements here for type-checking
 export interface CanvasGuageCardConfig {
   entity?: string;
   name?: string;
