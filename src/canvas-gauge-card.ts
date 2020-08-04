@@ -132,7 +132,7 @@ export class CanvasGaugeCard extends LitElement {
       gauge = new Gauge.RadialGauge({
         renderTo: this._canvasElement,
         height: this._config.gauge["height"],
-        width: this._config.gauge["widht"],
+        width: this._config.gauge["width"],
         value: 0,
       });
     }
