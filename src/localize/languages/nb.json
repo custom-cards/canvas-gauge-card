@@ -1,0 +1,8 @@
+
+{
+    "common": {
+        "version": "Versjon",
+        "invalid_configuration": "Ugyldig konfigurasjon",
+        "show_warning": "Vis advarsel"
+    }
+}
