@@ -14,3 +14,7 @@ gauge:
 
 - Support to set `background_color`, see readme.md.
 - Build system, now builds to one file
+
+# 0.0.6
+
+Update to latest guage-card package to 2.1.7
