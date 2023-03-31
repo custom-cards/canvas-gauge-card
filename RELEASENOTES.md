@@ -18,3 +18,7 @@ gauge:
 # 0.0.6
 
 Update to latest guage-card package to 2.1.7
+
+# 0.7.0
+
+Fix animation issues
