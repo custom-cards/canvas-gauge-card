@@ -1,6 +1,15 @@
 # canvas-gauge-card
-
 ![Build](https://github.com/custom-cards/canvas-gauge-card/workflows/Build/badge.svg)
+
+This card is basically deprecated and do not expect maintainence. 
+
+## Development
+I recommend use vscode devcontainers. do 
+```shell
+npm install
+npm run build
+```
+Inside container you can build, start HA using vscode tasks.
 
 This card allows you to use the awesome gauges at https://canvas-gauges.com/ in your lovelace GUI. This is still a very early and untested alpha version. Tested only on chrome and safari browsers.
 
@@ -232,6 +241,7 @@ Some of the properties that could be set. _italic_ is not mandatory.
 | entity             | your sensor                                                                                                                        |
 | name               | shows the name in shadow remove to hide it                                                                                         |
 | type               | `"radial-gauge"` or `"linear-gauge"`                                                                                               |
+| dropshadow         | true to show dropshadow, false to hide                                                                                             |
 | width              | width of the gauge                                                                                                                 |
 | height             | height of the gauge                                                                                                                |
 | _background_color_ | sets gauge background color, transparent default if not set                                                                        |

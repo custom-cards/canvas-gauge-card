@@ -44,13 +44,36 @@ import {
   query,
   PropertyValues,
 } from "lit-element";
-import { HomeAssistant, hasConfigOrEntityChanged } from "custom-card-helpers";
 
 import Gauge from "canvas-gauges";
 
-import { CanvasGuageCardConfig } from "./types";
-import { CARD_VERSION } from "./const";
-import { localize } from "./localize/localize";
+import { HomeAssistant, CanvasGuageCardConfig } from "./types.js";
+import { CARD_VERSION } from "./const.js";
+import { localize } from "./localize/localize.js";
+
+// Check if config or Entity changed
+export function hasConfigOrEntityChanged(
+  element: any,
+  changedProps: PropertyValues,
+  forceUpdate: Boolean,
+): boolean {
+  if (changedProps.has('config') || forceUpdate) {
+    return true;
+  }
+
+  if (element.config!.entity) {
+    const oldHass = changedProps.get('hass') as HomeAssistant | undefined;
+    if (oldHass) {
+      return (
+        oldHass.states[element.config!.entity]
+        !== element.hass!.states[element.config!.entity]
+      );
+    }
+    return true;
+  } else {
+    return false;
+  }
+}
 
 /* eslint no-console: 0 */
 console.info(
@@ -81,6 +104,8 @@ export class CanvasGaugeCard extends LitElement {
   private _gaugeHeight?: string;
   private _shadowHeight?: string;
   private _fontSize?: string;
+  private _useDropshadow?: boolean;
+
   private _gauge?: any;
   private _state?: string;
   private config?: any;
@@ -108,6 +133,7 @@ export class CanvasGaugeCard extends LitElement {
       : config.gauge["height"];
 
     this._shadowHeight = config.shadow_height ? config.shadow_height : "10%";
+    this._useDropshadow = config.dropshadow ? config.dropshadow : false;
 
     this._fontSize = config.font_size
       ? config.font_size
@@ -167,14 +193,16 @@ export class CanvasGaugeCard extends LitElement {
     return html`
       <style>
         :host {
-          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-            0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+          ${this._useDropshadow ?
+        `          box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+            0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);`
+        : ` `}
           display: block !important;
           border-radius: 2px !important;
           transition: all 0.3s ease-out !important;
           background-color: ${this._config.background_color
-            ? this._config.background_color
-            : "transparent"} !important;
+        ? this._config.background_color
+        : "transparent"} !important;
         }
         #cardroot {
           width: ${this._gaugeWidth}px;
@@ -242,13 +270,13 @@ export class CanvasGaugeCard extends LitElement {
 
   static get styles(): CSSResult {
     return css`
-      .warning {
-        display: block;
-        color: black;
-        background-color: #fce588;
-        padding: 8px;
-      }
-    `;
+    .warning {
+  display: block;
+  color: black;
+  background - color: #fce588;
+  padding: 8px;
+}
+`;
   }
   clickHandler(_) {
     this._fire("hass-more-info", { entityId: this._config?.entity });

@@ -1,6 +1,6 @@
 {
   "name": "canvas-gauge-card",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Lovelace canvas-gauge-card",
   "keywords": [
     "home-assistant",
@@ -15,39 +15,24 @@
   "repository": "git@github.com:custom_cards/canvas-gauge-card.git",
   "author": "@helto4real",
   "license": "MIT",
-  "dependencies": {
-    "@types/canvas-gauges": "^2.1.2",
-    "canvas-gauges": "^2.1.7",
-    "custom-card-helpers": "^1.6.3",
-    "home-assistant-js-websocket": "^4.4.0",
-    "lit-element": "^2.2.1",
-    "lit-html": "^1.1.2"
-  },
   "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/plugin-proposal-decorators": "^7.4.0",
-    "@rollup/plugin-json": "^4.0.0",
-    "@typescript-eslint/eslint-plugin": "^2.6.0",
-    "@typescript-eslint/parser": "^2.6.0",
-    "eslint": "^6.6.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-config-prettier": "^6.5.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-prettier": "^3.1.1",
-    "prettier": "^1.19.1",
-    "rollup": "^1.26.0",
-    "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-serve": "^1.0.1",
-    "rollup-plugin-terser": "^5.1.2",
-    "rollup-plugin-typescript2": "^0.24.3",
-    "rollup-plugin-uglify": "^6.0.3",
-    "typescript": "^3.6.4"
+    "@babel/core": "7.21.4",
+    "@rollup/plugin-babel": "6.0.3",
+    "@rollup/plugin-commonjs": "24.0.1",
+    "@rollup/plugin-json": "6.0.0",
+    "@rollup/plugin-node-resolve": "15.0.1",
+    "rollup": "2.79.1",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "typescript": "^5.0.4"
   },
+  "dependencies": {
+    "canvas-gauges": "2.1.7",
+    "home-assistant-js-websocket": "8.0.1",
+    "lit": "2.7.2"
+  },
+  "type": "module",
   "scripts": {
-    "build": "rollup -c",
-    "start": "rollup -c --watch"
+    "build-debug": "rollup -c -m inline",
+    "build": "rollup -c"
   }
 }
