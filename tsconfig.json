@@ -1,18 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "lib": ["es2017", "dom", "dom.iterable"],
-    "noEmit": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "strict": true,
-    "noImplicitAny": false,
-    "skipLibCheck": true,
+    "target": "ES2017",
+    "module": "ESNext",
     "resolveJsonModule": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true
-  }
+    "moduleResolution": "NodeNext",
+    "sourceMap": true,
+    "outDir": "dist"
+  },
+  "include": [
+    "src/**/*"
+  ],
 }

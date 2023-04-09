@@ -1,0 +1,35 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "build",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"label": "npm: build"
+		},
+		{
+			"label": "Deploy",
+			"type": "shell",
+			"command": "cp -f dist/canvas-gauge-card.js .devcontainer/HA/config/www/custom_cards/",
+			"group": "test",
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
+		},
+		{
+			"label": "Start HA",
+			"type": "shell",
+			"command": "cd /srv/homeassistant && hass -c /usr/src/config",
+			"group": "test",
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			}
+		}
+	]
+}

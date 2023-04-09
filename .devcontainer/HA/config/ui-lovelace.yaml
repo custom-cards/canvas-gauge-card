@@ -1,0 +1,3 @@
+title: Hellströms home
+views:
+  - !include lovelace/system.yaml
