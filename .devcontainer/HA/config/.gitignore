@@ -1,6 +1,7 @@
 /*.*
 !.gitignore
-!*.yaml
+!ui-lovelace.yaml
+!configuration.yaml
 
 www/custom_cards/*.*
 !*.md
