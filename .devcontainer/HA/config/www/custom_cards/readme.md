@@ -1,0 +1,1 @@
+This is the place where you should copy the card js file. Use the devcontainer vscode task `Deploy` for it.
