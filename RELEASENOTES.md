@@ -20,6 +20,9 @@ gauge:
 Update to latest guage-card package to 2.1.7
 
 # 0.7.0
+Fix animation issues
+
+# 0.8.0
 - Dropshadow is now optional
 - Removed dependency on custom-card-helpers
 - Added devconainer that let you run HA and debug card
