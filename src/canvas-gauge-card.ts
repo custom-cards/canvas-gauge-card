@@ -132,7 +132,7 @@ export class CanvasGaugeCard extends LitElement {
       ? config.card_height
       : config.gauge["height"];
 
-    this._shadowHeight = config.shadow_height ? config.shadow_height : "10%";
+    this._shadowHeight = config.shadow_height ? config.shadow_height : "0%";
     this._useDropshadow = config.dropshadow ? config.dropshadow : false;
 
     this._fontSize = config.font_size
@@ -204,7 +204,7 @@ export class CanvasGaugeCard extends LitElement {
         ? this._config.background_color
         : "transparent"} !important;
         }
-        #cardroot {
+        .cardroot {
           width: ${this._gaugeWidth}px;
           height: calc(
             ${this._gaugeHeight}px +
@@ -213,7 +213,7 @@ export class CanvasGaugeCard extends LitElement {
           position: relative;
           margin: auto;
         }
-        #container {
+        .container {
           width: ${this._gaugeWidth}px;
           height: ${this._gaugeHeight}px;
           position: relative;
@@ -221,12 +221,13 @@ export class CanvasGaugeCard extends LitElement {
           overflow: hidden;
           text-align: center;
         }
-        #innercontainer {
+        .innercontainer {
           position: relative;
           top: ${this._config.card_top ? this._config.card_top : 0};
           left: ${this._config.card_left ? this._config.card_left : 0};
         }
         .shadow {
+          visible: ${this._shadowHeight == "0%" ? `none` : `block`};
           width: 100%;
           height: ${this._shadowHeight};
           left: 0px;
@@ -234,7 +235,7 @@ export class CanvasGaugeCard extends LitElement {
           background: rgba(0, 0, 0, 0.5);
           position: absolute;
         }
-        #state {
+        .state {
           position: relative;
           float: left;
           top: 50%;
@@ -244,14 +245,14 @@ export class CanvasGaugeCard extends LitElement {
           transform: translate(-50%, -50%);
         }
       </style>
-      <div id="cardroot">
+      <div class="cardroot">
         <div
-          id="container"
+          class="container"
           width=${this._gaugeWidth}
           height=${this._gaugeHeight}
         >
           <div
-            id="innercontainer"
+            class="innercontainer"
             width=${this._gaugeWidth}
             height=${this._gaugeHeight}
             @click=${this.clickHandler}
@@ -259,8 +260,8 @@ export class CanvasGaugeCard extends LitElement {
             <canvas id="canvaselement"> </canvas>
           </div>
         </div>
-        <div id="shadow">
-          <div id="state" style="font-size: ${this._fontSize}">
+        <div class="shadow">
+          <div class="state" style="font-size: ${this._fontSize}">
             ${this._config.name}
           </div>
         </div>
