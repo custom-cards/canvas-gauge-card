@@ -23,6 +23,12 @@ Update to latest guage-card package to 2.1.7
 Fix animation issues
 
 # 0.8.0
+
 - Dropshadow is now optional
 - Removed dependency on custom-card-helpers
 - Added devconainer that let you run HA and debug card
+
+# 0.9.0
+
+- Using class instead of id in css
+- shadow_height now not visible if not configured.
