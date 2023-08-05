@@ -1,0 +1,7 @@
+{
+    "common": {
+        "version": "Verzia",
+        "invalid_configuration": "Chybná konfigurácia",
+        "show_warning": "Zobraziť upozornenie"
+    }
+}
