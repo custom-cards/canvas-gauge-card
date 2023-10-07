@@ -1,7 +1,9 @@
 import * as en from "./languages/en.json";
+import * as sk from "./languages/sk.json";
 
 var languages = {
   en: en,
+  sk: sk,
 };
 
 export function localize(
