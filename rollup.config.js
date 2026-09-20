@@ -12,7 +12,7 @@ export default [
       format: "es",
     },
 
-    plugins: [nodeResolve({}), commonjs(), typescript(), json(), babel({
+    plugins: [nodeResolve({}), commonjs(), typescript({ include: ["src/**/*.ts"] }), json(), babel({
       exclude: "node_modules/**",
     })],
   },
